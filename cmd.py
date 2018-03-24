@@ -2,10 +2,10 @@
 # Marmik
 # MayankSingh #Dyknoww
 
-import time as t
-import RPi.GPIO as g
-import json 
-import requests as r
+import time as t #For delay and all
+import RPi.GPIO as g #to use gpio
+import json  #to convert data in dictionary
+import requests as r #to fetch data from a site
 
 g.setmode(g.BOARD)
 g.setwarnings(False)
