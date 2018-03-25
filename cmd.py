@@ -1,7 +1,7 @@
 
 # vivek123
 # Marmik
-# MayankSingh #Dyknoww
+# MayankSingh 
 
 import time as t #For delay and all
 import RPi.GPIO as g #to use gpio
