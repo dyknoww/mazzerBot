@@ -2,7 +2,6 @@
 # MarmikSharma #MaxDevilio
 # MayankSingh #Dyknoww
 
-import csv #to save and read data
 import time as t #For delay and all
 import RPi.GPIO as g #to use gpio
 import json  #to convert data in dictionary
@@ -18,8 +17,13 @@ g.setup(31,g.OUT)
 g.setup(33,g.OUT)
 # left  forward wheel
 g.setup(35,g.OUT)
-arr=[]
+arr=[] # to store instructions
 
+# p is for directions and k for magnitude motion values
+#f for forward
+#b for backward
+#l for left 
+#r for right
 def direction(p ,k):
    
 	#for going forward	
@@ -67,8 +71,8 @@ while(1):
 		k =  z + y*10 +x*100
 	#print("dist " + str(k)+ " dir " + p)
         #direction( p, k)
-        if p == 'R':
-               while(p != 'M' and p!= 'S'):
+        if p == 'R': # R for enabling data recieving/reading
+               while(p != 'M' and p!= 'S'): # M and S are for Motion and Stoppping instructions respectively
                         data = r.get("https://api.thingspeak.com/channels/458106/feeds.json?api_key=XQ037NVAG71W4PWA&results=2")
                         dict = data.json()
                         for x in range(1):
