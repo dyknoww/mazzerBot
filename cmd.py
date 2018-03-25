@@ -50,9 +50,10 @@ def direction(p ,k):
         	g.output(31,g.LOW)
         	g.output(33,g.LOW)
 		print ("Going Left")
-	for i in range(k):
-                t.sleep(1)
-                print(i)
+	for o in range(k):
+                t.sleep(0.23)
+                print(o)
+                
 
 q = 'a'
 while(1):
@@ -66,8 +67,8 @@ while(1):
 		k =  z + y*10 +x*100
 	#print("dist " + str(k)+ " dir " + p)
         #direction( p, k)
-        if p == 'r':
-               while(p != 'm' and p!= 's'):
+        if p == 'R':
+               while(p != 'M' and p!= 'S'):
                         data = r.get("https://api.thingspeak.com/channels/458106/feeds.json?api_key=XQ037NVAG71W4PWA&results=2")
                         dict = data.json()
                         for x in range(1):
@@ -80,9 +81,30 @@ while(1):
                                 arr.append((p,k))
                                 q = p
                                 print(arr)
-                        else:
-                                print("error")
-        print("s or m is present")
+        print("S or M is present")
+
+        if p == 'M':
+                print("keep rolling baby")
+                sz = len(arr)
+                for i in range(1,sz):
+                        p_dash = arr[i][0]
+                        k_dash = arr[i][1]
+                        direction(p_dash,k_dash)
+                        if i == sz-2:
+                                p = 'S'
+                                print("S detected")
+                                break
+        
+        if p == 'S':
+                        print("stop mode baby")
+                        
 
 
-               
+
+
+
+
+
+
+
+                
