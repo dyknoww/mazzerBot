@@ -1,6 +1,6 @@
 
 # Marmik
-# MayankSingh #Dyknoww
+# MayankSingh 
 
 import time as t
 import RPi.GPIO as g
